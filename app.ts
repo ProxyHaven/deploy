@@ -24,7 +24,7 @@ await serve(
 
 		if (!allow) {
 			const resp = await serveDir(req, {
-				fsRoot: "siteBlocked",
+				fsRoot: config.blockedDir,
 				showIndex: true,
 				quiet: true,
 			});
@@ -44,7 +44,7 @@ await serve(
 				});
 
 			const resp = await serveDir(req, {
-				fsRoot: "site",
+				fsRoot: config.dir,
 				showDirListing: true,
 				showIndex: true,
 				quiet: true,
