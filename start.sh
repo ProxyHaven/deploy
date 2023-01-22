@@ -1,2 +1,1 @@
-./deps.sh
-deno run --allow-net --allow-read --allow-env app.ts
+deno run --allow-run --allow-net --allow-env --allow-read app.ts

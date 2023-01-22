@@ -3,14 +3,18 @@ import { serveDir } from "https://deno.land/std@0.173.0/http/file_server.ts";
 
 import { getCookies } from "https://deno.land/std@0.173.0/http/cookie.ts";
 
-import Proxy from "./proxy/proxy.ts";
-
+import Proxy from "https://cdn.jsdelivr.net/gh/ProxyHaven/aero-backends/proxy.ts";
 const proxy = new Proxy("/fetch", "/fetchWs");
 
 import "https://deno.land/std@0.173.0/dotenv/load.ts";
 import config from "./config.json" assert { type: "json" };
 
-import { prefix } from "./site/aero/config.js";
+import { prefix } from "https://cdn.jsdelivr.net/gh/ProxyHaven/aero/config.js";
+
+await Deno.run({
+	cmd: ["./deps.sh"],
+	stderr: "piped",
+});
 
 await serve(
 	async (req: Request): Promise<Response> => {
