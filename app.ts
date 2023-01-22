@@ -22,11 +22,15 @@ await serve(
 		const usingCrOS = req.headers.get("user-agent")?.includes("CrOS") ?? false;
 		const allow = !config.requireUnlock || unlocked || code || usingCrOS;
 
-		if (!allow)
-			return await serveDir(req, {
+		if (!allow) {
+			const resp = await serveDir(req, {
 				fsRoot: "siteBlocked",
 				showIndex: true,
 			});
+
+			// Only block html files
+			if (resp.headers.get("content-type")?.includes("text/html")) return resp;
+		}
 
 		const path = url.pathname;
 
