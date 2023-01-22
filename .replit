@@ -1,4 +1,4 @@
-run = "git submodule update --init --recursive && ./start.sh"
+run = "./start.sh"
 
 hidden = [".deno"]
 

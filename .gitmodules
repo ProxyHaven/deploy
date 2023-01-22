@@ -1,6 +1,0 @@
-[submodule "proxy"]
-	path = proxy
-	url = https://github.com/ProxyHaven/aero-backends
-[submodule "site"]
-	path = site
-	url = https://github.com/ProxyHaven/Haven
