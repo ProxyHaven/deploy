@@ -26,6 +26,7 @@ await serve(
 			const resp = await serveDir(req, {
 				fsRoot: "siteBlocked",
 				showIndex: true,
+				quiet: true,
 			});
 
 			// Only block html files
@@ -46,6 +47,7 @@ await serve(
 				fsRoot: "site",
 				showDirListing: true,
 				showIndex: true,
+				quiet: true,
 			});
 
 			if (code)
