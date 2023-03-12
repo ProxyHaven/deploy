@@ -1,8 +1,7 @@
 {
 	"port": 3000,
-	"requireUnlock": false,
+	"requireUnlock": true,
 	"key": "unlock",
-	"hideHistory": true,
 	"dir": "site",
 	"blockedDir": "blockedSite"
 }

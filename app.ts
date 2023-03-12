@@ -23,10 +23,11 @@ await serve(
 		const url = new URL(req.url);
 		const unlocked = key === config.key;
 		const code = url.search.startsWith("?unlock");
-		const usingCrOS = req.headers.get("user-agent")?.includes("CrOS") ?? false;
-		const allow = !config.requireUnlock || unlocked || code || usingCrOS;
+		const usingCrOS =
+			req.headers.get("user-agent")?.includes("CrOS") ?? false;
+		const allowed = !config.requireUnlock || unlocked || code || usingCrOS;
 
-		if (!allow) {
+		if (!allowed) {
 			const resp = await serveDir(req, {
 				fsRoot: config.blockedDir,
 				showIndex: true,
@@ -34,7 +35,8 @@ await serve(
 			});
 
 			// Only block html files
-			if (resp.headers.get("content-type")?.includes("text/html")) return resp;
+			if (resp.headers.get("content-type")?.includes("text/html"))
+				return resp;
 		}
 
 		const path = url.pathname;
@@ -55,9 +57,11 @@ await serve(
 			});
 
 			if (code)
-				resp.headers.set("set-cookie", "key=unlock; SameSite=None; Secure");
+				resp.headers.set(
+					"set-cookie",
+					"key=unlock; SameSite=None; Secure"
+				);
 
-			// TODO: Set status to 404 to avoid storing history on Chromium
 			return resp;
 		}
 	},

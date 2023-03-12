@@ -1,6 +1,8 @@
+org="https://github.com/ProxyHaven/"
+
 if [ ! -d site ]
 then
-    git clone https://github.com/ProxyHaven/Haven.git site
+    git clone "${org}/Haven.git" site
     cd site
         git pull
         ./deps.sh
