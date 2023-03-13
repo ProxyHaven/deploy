@@ -1,10 +1,11 @@
-org="https://github.com/ProxyHaven/"
+org="https://github.com/NebulaServices/"
 
 if [ ! -d site ]
 then
     git clone "${org}/Haven.git" site
-    cd site
-        git pull
-        ./deps.sh
-    cd ..
 fi
+
+cd site
+    git pull
+	./deps.sh
+cd ..
