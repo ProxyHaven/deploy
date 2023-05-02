@@ -2,7 +2,7 @@ org="https://github.com/NebulaServices/"
 
 if [ ! -d site ]
 then
-    git clone "${org}/Haven.git" site
+    git clone "${org}/aero-site.git" site
 fi
 
 cd site
