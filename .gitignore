@@ -1,4 +1,8 @@
-site/
+# NPM
+node_modules/
+package-lock.json
 
 # For Replit
 .deno
+
+site/

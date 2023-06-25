@@ -1,0 +1,29 @@
+{
+	"name": "aero-deploy",
+	"description": "A easily deployable version of aero.",
+	"version": "1.0.0",
+	"main": "src/app.ts",
+	"type": "module",
+	"scripts": {
+		"build": "tsc",
+		"start": "npm run build && node dist/app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ProxyHaven/deploy.git"
+	},
+	"author": "Ryan Wilson",
+	"license": "AGPL-3.0-or-later",
+	"devDependencies": {
+		"@tsconfig/recommended": "^1.0.2",
+		"@types/cookie-parser": "^1.4.3",
+		"@types/polka": "^0.5.4",
+		"typescript": "^5.0.2"
+	},
+	"dependencies": {
+		"@tomphttp/bare-server-node": "^1.2.6",
+		"cookie-muncher": "^0.4.2",
+		"polka": "^0.5.2",
+		"vite": "^4.3.9"
+	}
+}

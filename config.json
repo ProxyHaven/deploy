@@ -1,5 +1,6 @@
 {
 	"port": 3000,
+	"bare": false,
 	"requireUnlock": true,
 	"key": "unlock",
 	"dir": "site",
